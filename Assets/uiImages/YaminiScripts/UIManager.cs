@@ -3,6 +3,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
     Time.timeScale = 0f;
 
     // RESET ALL PANELS
-    MainMenuPannel.SetActive(false);
+    MainMenuPannel.SetActive(true);
     LevelsPannel.SetActive(false);
     PausePannel.SetActive(false);
     GameOverPannel.SetActive(false);
@@ -94,7 +95,9 @@ public class UIManager : MonoBehaviour
   {
     PlayerPrefs.SetInt("Level", 0);
     LevelsPannel.SetActive(false);
+    MainMenuPannel.SetActive(false);
     LivesPannel.SetActive(true);
+
     Time.timeScale = 1f;
   }
 
@@ -102,6 +105,7 @@ public class UIManager : MonoBehaviour
   {
     PlayerPrefs.SetInt("Level", 1);
     LevelsPannel.SetActive(false);
+    MainMenuPannel.SetActive(false);
     LivesPannel.SetActive(true);
     Time.timeScale = 1f;
   }
@@ -110,7 +114,9 @@ public class UIManager : MonoBehaviour
   {
     PlayerPrefs.SetInt("Level", 2);
     LevelsPannel.SetActive(false);
+    MainMenuPannel.SetActive(false);
     LivesPannel.SetActive(true);
+
     Time.timeScale = 1f;
   }
   public void StartButton()
@@ -150,6 +156,8 @@ public class UIManager : MonoBehaviour
   public void BackButton()
   {
     SettingsPannel.SetActive(false);
+    LivesPannel.SetActive(true);
+
   }
   public void AudioButton()
   {
